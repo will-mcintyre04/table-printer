@@ -14,11 +14,13 @@ tableData = [['apples', 'oranges', 'cherries', 'bananas'],
              ['dogs', 'cats', 'moose', 'goose']]
 
 def findWidth():
-    colWidth = []
+    colWidth = [0] * len(tableData)
     for column in tableData:
         longestString = ''
         for value in column:
             if len(value) > len(longestString):
                 longestString = value
-        colWidth.append(longestString)
+        colWidth.append(longestString, len(longestString))
     return colWidth
+
+findWidth()
