@@ -20,7 +20,7 @@ def printTable(table):
     # and put the numbers of characters in the new list
     for y in range(0, len(table)):
         for x in table[y]:
-            if colWidths[y] < len(x):
+            if colWidths[y] < len(x): # If the current largest width is less than that of the new item
                 colWidths[y] = len(x)
 
     # "rotate" and print the list of lists
