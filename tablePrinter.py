@@ -9,18 +9,28 @@ Created on Sat May 22 20:39:21 2021
 # Table Printer
 # Practice Project
 
-tableData = [['apples', 'oranges', 'cherries', 'bananas'],
+tableData = [['apples', 'oranges', 'cherries', 'banana'],
              ['Alice', 'Bob', 'Carol', 'David'],
              ['dogs', 'cats', 'moose', 'goose']]
 
-def findWidth():
-    colWidth = [0] * len(tableData)
-    for column in tableData:
-        longestString = ''
-        for value in column:
-            if len(value) > len(longestString):
-                longestString = value
-        colWidth.append(longestString, len(longestString))
-    return colWidth
+def printTable(table):
+    # create a new list of 3 "0" values: one for each list in tableData
+    colWidths = [0] * len(table)
+    # search for the longest string in each list of tableData
+    # and put the numbers of characters in the new list
+    for y in range(0, len(table)):
+        for x in table[y]:
+            if colWidths[y] < len(x):
+                colWidths[y] = len(x)
 
-findWidth()
+    # "rotate" and print the list of lists
+    for x in range(0, len(table[0])) :
+        for y in range(0, len(table)) :
+            print(table[y][x].rjust(colWidths[y]), end = ' ')
+        print()
+        x += 1
+
+printTable(tableData)
+        
+                
+                
