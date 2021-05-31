@@ -28,7 +28,6 @@ def printTable(table):
         for y in range(0, len(table)) :
             print(table[y][x].rjust(colWidths[y]), end = ' ')
         print()
-        x += 1
 
 printTable(tableData)
         
