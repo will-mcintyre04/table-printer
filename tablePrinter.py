@@ -30,6 +30,3 @@ def printTable(table):
         print()
 
 printTable(tableData)
-        
-                
-                
